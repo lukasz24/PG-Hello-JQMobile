@@ -18,3 +18,7 @@ function deviceInfo() {
 
 	document.getElementById("deviceDetails").innerHTML = info;	
 }
+
+function showInterests(){
+	$("#myInterests").text("Programming, gaming and eating.");
+}
