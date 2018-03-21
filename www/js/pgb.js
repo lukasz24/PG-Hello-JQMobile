@@ -1,10 +1,13 @@
 function init() {
 	document.addEventListener("deviceready",onDeviceReady, false);
+	
 }
 
 function onDeviceReady() {
 	navigator.notification.beep(2);
 	deviceInfo();
+	
+
 }
 
 function deviceInfo() {
@@ -21,4 +24,19 @@ function deviceInfo() {
 
 function showInterests(){
 	$("#myInterests").text("Programming, gaming and eating.");
+}
+
+function approveForm(){
+	
+	$("#pageone").append("<a href='#pagetwo' style='display: none;' id='goToPageTwo' ></a>");
+	$("#goToPageTwo").click();
+	$("#goToPageTwo").remove();
+	var firstName = $("#nameInput");
+	var name = $("#nameInput").val().substring(0,1).toUpperCase() + $("#nameInput").val().substring(1, $("#nameInput").lenght).toLowerCase() 
+		+ " " + $("#surnameInput").val().substring(0,1).toUpperCase() + $("#surnameInput").val().substring(1, $("#surnameInput").lenght).toLowerCase();
+	$("#fullName").text("Your Name: " + name);
+
+	$("#dateLi").text("Date: " + $("#date").val());
+	$("#fruitLi").text("Fruit: " + $("#select-choice-1").val());
+	$("#quantityLi").text("Quantity: " + $("#quantity").val());
 }
